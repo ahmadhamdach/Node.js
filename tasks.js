@@ -54,6 +54,10 @@ function onDataReceived(text) {
   else if (text[0] === "remove") {
     remove(text[1]);
   }
+  
+  else if (text[0] === "edit") {
+    edit(text.slice(1, 2).join(' '), text.slice(2).join(' '));
+  }
   else{
     unknownCommand(text);
   }
@@ -104,6 +108,22 @@ function remove(text) {
   }
   for (var j = 0; j < tasks.length; j++) {
     console.log(j + 1 + " - " + tasks[j]);
+  }
+}
+function edit(text, editText) {
+
+  if (text === '' && editText === '') {
+    console.log("please enter a task number:")
+  }
+
+  else if (isNaN(text)) {
+    tasks[tasks.length - 1] = text + ' ' + editText
+  }
+  else {
+    tasks[text - 1] = editText;
+  }
+  for (var k = 0; k < tasks.length; k++) {
+    console.log(k + 1 + " - " + tasks[k]);
   }
 }
 
