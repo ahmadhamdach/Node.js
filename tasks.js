@@ -67,6 +67,27 @@ function onDataReceived(text) {
  function help() {
   console.log("here you can know about hello and exit and remove");
 }
+  var tasks = ["Task 1", "Task 2"];
+
+function list() {
+  for (var i = 0; i < tasks.length; i++) {
+    console.log(i + 1 + " - " + tasks[i]);
+  }
+}
+
+
+function add(task) {
+
+  if (task === '') {
+    console.log("Task undefined");
+  } else {
+    tasks.push(task);
+    for (var i = 0; i < tasks.length; i++) {
+      console.log(i + 1 + " - " + tasks[i]);
+    }
+  }
+}
+
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
