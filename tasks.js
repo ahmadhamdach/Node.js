@@ -51,6 +51,9 @@ function onDataReceived(text) {
     text.shift();
     add(text.join(" "));
   }
+  else if (text[0] === "remove") {
+    remove(text[1]);
+  }
   else{
     unknownCommand(text);
   }
@@ -87,10 +90,27 @@ function add(task) {
     }
   }
 }
+function remove(text) {
+  if (text < 1 || text > tasks.length) {
+    console.log("Task not found, select a proper task number:")
+  }
+
+  if (text) {
+
+    tasks.splice(text - 1, 1)
+  }
+  else {
+    tasks.splice(tasks.length - 1, 1)
+  }
+  for (var j = 0; j < tasks.length; j++) {
+    console.log(j + 1 + " - " + tasks[j]);
+  }
+}
 
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
+
 
 
 /**
