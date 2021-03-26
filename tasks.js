@@ -74,7 +74,6 @@ function unknownCommand(c){
   if (text) {
     console.log('hello ' + text + '!');
  
-    
   }
   else
     console.log('hello!');
