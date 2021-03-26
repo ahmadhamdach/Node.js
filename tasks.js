@@ -47,6 +47,10 @@ function onDataReceived(text) {
   else if (text[0] === "list") {
     list();
   }
+  else if (text[0] === "add") {
+    text.shift();
+    add(text.join(" "));
+  }
   else{
     unknownCommand(text);
   }
