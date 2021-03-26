@@ -69,8 +69,15 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+ function hello(text) {
+  if (text) {
+    console.log('hello ' + text + '!');
+
+  }
+  else
+    console.log('hello!');
+
+
 }
 
 
