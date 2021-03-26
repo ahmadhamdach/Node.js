@@ -56,6 +56,9 @@ function onDataReceived(text) {
  * @param  {string} c the text received
  * @returns {void}
  */
+ function help() {
+  console.log("here you can know about hello and exit and remove");
+}
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
