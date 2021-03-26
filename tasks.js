@@ -44,6 +44,9 @@ function onDataReceived(text) {
   else if (text[0] === 'help') {
     help();
   }
+  else if (text[0] === "list") {
+    list();
+  }
   else{
     unknownCommand(text);
   }
